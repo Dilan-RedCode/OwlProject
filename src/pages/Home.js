@@ -12,7 +12,7 @@ import Resumen from "../componentes/Resumen.jsx"
 
 function Home() {
     return (
-        <div className="Home-Login fondo">
+        <div className="Home-Login">
             <SideBar />
             <Cursos />
             <Metas />

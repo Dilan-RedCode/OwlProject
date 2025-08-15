@@ -1,14 +1,6 @@
 
 /* Contenedor principal del perfil */
-.profile-container {
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
+
   /* Encabezado del perfil */
   .profile-header {
     text-align: center;

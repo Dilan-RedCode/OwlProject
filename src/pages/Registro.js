@@ -4,11 +4,11 @@ import '../pagesStyles/login.css'
 // Componentes
 import Register from '../componentes/Registro.jsx';
 
-function Registro(props) {
-    const { setLogueado } = props
+function Registro() {
+
     return (
         <div className="Login">
-            <Register setLogueado={setLogueado} />
+            <Register />
         </div>
     );
 }

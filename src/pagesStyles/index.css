@@ -5,6 +5,40 @@
   padding: 0%;
   
 }
+.LoadingScreen {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 
+.greenButton {
+  background-color: #2ECC72;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.redButton {
+  background-color: #ad1100;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
 html {
   font-size: 62.5%;

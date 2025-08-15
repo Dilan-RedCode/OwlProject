@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axiosInstance from "../axiosConfig.tsx";
 // Styles
 import "../pagesStyles/login.css";
 
 // IMG
+import LogoOwlSTR from "../IMG/LogoOwlSTR.svg";
 import TextLogo from "../IMG/Texto_Owl.png";
 
 function Register(props) {
@@ -64,7 +65,7 @@ function Register(props) {
     }
       // enviar datos al servidor backend
 
-      const response = await axios.post(
+      const response = await axiosInstance.post(
         "http://localhost:3001/usuario/registro",
         {
           nombres,
@@ -127,7 +128,9 @@ function Register(props) {
           </Link>
         </div>
 
-        <div className="Flogo" id="bgLogoLogin"></div>
+        <div className="Flogo" id="bgLogoLogin">
+          <svg src={LogoOwlSTR} alt="Logo" fetchpriority="high" loading="eager" />
+        </div>
 
         {/* <!-- Titulo --> */}
 

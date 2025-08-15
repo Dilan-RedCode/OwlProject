@@ -22,6 +22,10 @@
     }
   ],
   "display": "standalone",
+  "display_override": ["fullscreen", "minimal-ui"],
+  "description": "Aplicación de estrategia de inversión Owl",
+  "lang": "es",
+  "dir": "ltr",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }

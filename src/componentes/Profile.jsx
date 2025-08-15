@@ -1,8 +1,13 @@
 import React from 'react';
+
 import './styles/profile.css';
+// importamos el contexto
+import { useAuth } from "../context/AuthContext.tsx";
+
 
 const Perfil = () => {
 
+  const { logout } = useAuth();
 
   // Datos del usuario (provienen de sessionStorage)
   const usuario = {
@@ -16,9 +21,11 @@ const Perfil = () => {
   return (
     <div className="profile-container">
       <div className="profile-header">
-        <h1>Perfil de {usuario.nombres}</h1>
+        {/*  */}
+        <h1>Bienvenido: {usuario.nombres}</h1>
 
-        <h1 className="username">{usuario.nombres}</h1>
+        <h1 className="username">Nombre Completo:{usuario.nombres}</h1>
+        
 
         <div className="bio">
           <h2>Biografía</h2>
@@ -28,9 +35,10 @@ const Perfil = () => {
           <p>Email: {usuario.email}</p>
           <p>Teléfono: {usuario.telefono}</p>
         </div>
+        {/* botones de accion */}
         <div className="action-buttons">
-          <button className="btn edit-btn">Editar Perfil</button>
-          <button className="btn logout-btn">Cerrar Sesión</button>
+          <button className="greenButton">Editar Perfil</button>
+          <button onClick={logout} className="redButton">Cerrar Sesión</button>
         </div>
       </div>
       <div className="profile-content">

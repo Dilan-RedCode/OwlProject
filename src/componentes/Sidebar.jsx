@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+// importamos el contexto
+import { useAuth } from "../context/AuthContext.tsx";
+
 
 // Styles
 import "./styles/sidebar.css";
@@ -13,6 +16,8 @@ const SideBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosed, setIsClosed] = useState(false);
 
+  // importamos la funcion de logout
+  const { logout } = useAuth();
   // Función para alternar el estado del sidebar
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -213,7 +218,7 @@ const SideBar = () => {
             
 
             <Link to="/" className="dropdown-item">
-              <li className="profileNavItem">
+              <li className="profileNavItem"onClick={logout}>
                   {/* Sign Out Logo */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

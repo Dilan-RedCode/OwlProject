@@ -1,4 +1,5 @@
-import React from "react";
+
+
 
 // styles
 import '../pagesStyles/login.css'
@@ -7,11 +8,13 @@ import '../pagesStyles/login.css'
 import Iniciosesion from "../componentes/Login.jsx";
 
 
-function login() {
+
+function Login() {
+
     return (
         <div className="Login">
             <Iniciosesion />
         </div>
     );
 }
-export default login;
+export default Login;

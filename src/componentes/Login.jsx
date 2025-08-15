@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+
+// Importación de axiosInstance
+import axiosInstance from "../axiosConfig.tsx";
 
 // Styles
 import "../pagesStyles/login.css";
@@ -26,17 +28,17 @@ const Iniciosesion = (props) => {
     e.preventDefault();
 
     try {
-      await axios
+      await axiosInstance
         .post(
           "http://localhost:3001/usuario/login",
           {
             Email,
             Contraseña,
           },
-          {}
+          {withCredentials: true} // Asegúrate de enviar las cookies
         )
         .then((response) => {
-          navigate("/home")
+          navigate("/")
           sessionStorage.setItem("Nombres", response.data.nombres, { path: "/" });
           sessionStorage.setItem("apellidos", response.data.apellidos, { path: "/" });
           sessionStorage.setItem("email", response.data.email, { path: "/" });
@@ -112,6 +114,7 @@ const Iniciosesion = (props) => {
               onChange={(e) => setContraseña(e.target.value)}
               placeholder="Contraseña"
               tittle="No compartas tu contraseña"
+              autoComplete="on"
               required
             />
           </div>

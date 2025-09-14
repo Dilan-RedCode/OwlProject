@@ -5,6 +5,13 @@
   padding: 0%;
   
 }
+#root{
+  display: grid;
+}
+.page{
+  margin-top: 70px;
+}
+
 .LoadingScreen {
   display: grid;
   width: 100vw;

@@ -12,7 +12,7 @@ import Iniciosesion from "../componentes/Login.jsx";
 function Login() {
 
     return (
-        <div className="Login">
+        <div className="Registro-Login">
             <Iniciosesion />
         </div>
     );

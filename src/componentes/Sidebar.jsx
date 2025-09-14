@@ -30,15 +30,14 @@ const SideBar = () => {
     <aside className="SideNav">
       {/* Button OpenSideBar */}
 
-      <button className="toggleButton" data-descr="Click para abrir el sidebar" onClick={toggleSidebar}>
-        <span tabIndex="0" data-descr="Click para abrir el sidebar"></span>
+      <button className="toggleSidebar" onClick={toggleSidebar}>
       
-
+        {/* SVG list */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="36"
           height="36"
-          fill="#00ff00"
+          fill="#2ECC72"
           className="bi bi-list"
           viewBox="0 0 16 16"
         >
@@ -47,19 +46,20 @@ const SideBar = () => {
             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
           />
         </svg>
+        {/* Logo Owl */}
         <img
           src={Logo}
           alt="logoOwl"
           className={`Logo-Owl ${isOpen ? "open" : "closed"}`}
           id="btnOpen"
         />
-       
+       {/* TextOwl */}
 
         <img
           className="text-logo"
           id="textLogo"
           src={TextLogo}
-          alt="TextLogo"
+          alt="OwlSTR"
         />
       </button>
 
@@ -68,7 +68,7 @@ const SideBar = () => {
         {/* Sidebar Options */}
         <ul className="mainNav">
           {/* Boton Inicio */}
-          <Link to="/home" className="nav-link active" aria-current="page">
+          <Link to="/" className="nav-link active" aria-current="page">
             <li className="navItem" id="inicio">
               {/* Logo Inicio */}
               <svg

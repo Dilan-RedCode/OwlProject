@@ -49,11 +49,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setIsAuthenticated(false);
       } finally {
         setIsLoading(false);
-        if (isAuthenticated === true) {
-          // Si está autenticado, redirige a la página de inicio
-          console.log("Usuario autenticado");
-          navigate("/");
-        }
       }
     };
 

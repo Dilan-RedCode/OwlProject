@@ -9,7 +9,7 @@ import '../pagesStyles/perfil.css'
 
 function perfil() {
     return (
-        <div className=''>
+        <div className='perfil page'>
             <SideBar />
             <Perfil />
 

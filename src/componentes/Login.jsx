@@ -1,24 +1,22 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // Importación de axiosInstance
-import axiosInstance from "../axiosConfig.tsx";
+import axiosInstance from '../axiosConfig.tsx';
 
 // Styles
-import "../pagesStyles/login.css";
+import '../pagesStyles/login.css';
 // IMG
-import TextLogo from "../IMG/Texto_Owl.png";
+import TextLogo from '../IMG/Texto_Owl.svg';
 
 const Iniciosesion = (props) => {
-
   const navigate = useNavigate();
 
-  const [Contraseña, setContraseña] = useState("");
-  const [mensaje, setMensaje] = useState("");
-  const [Email, setEmail] = useState("");
+  const [Contraseña, setContraseña] = useState('');
+  const [mensaje, setMensaje] = useState('');
+  const [Email, setEmail] = useState('');
   const [showPswrd, setShowPswrd] = useState(false);
-  
 
   let ShowFunction = () => {
     setShowPswrd(!showPswrd);
@@ -30,19 +28,19 @@ const Iniciosesion = (props) => {
     try {
       await axiosInstance
         .post(
-          "http://localhost:3001/usuario/login",
+          'http://localhost:3001/usuario/login',
           {
             Email,
             Contraseña,
           },
-          {withCredentials: true} // Asegúrate de enviar las cookies
+          { withCredentials: true } // Asegúrate de enviar las cookies
         )
         .then((response) => {
-          navigate("/")
-          sessionStorage.setItem("Nombres", response.data.nombres, { path: "/" });
-          sessionStorage.setItem("apellidos", response.data.apellidos, { path: "/" });
-          sessionStorage.setItem("email", response.data.email, { path: "/" });
-          sessionStorage.setItem("telefono", response.data.telefono, { path: "/" });
+          navigate('/');
+          sessionStorage.setItem('Nombres', response.data.nombres, { path: '/' });
+          sessionStorage.setItem('apellidos', response.data.apellidos, { path: '/' });
+          sessionStorage.setItem('email', response.data.email, { path: '/' });
+          sessionStorage.setItem('telefono', response.data.telefono, { path: '/' });
           console.log(response.data.message);
         });
     } catch (error) {
@@ -50,7 +48,7 @@ const Iniciosesion = (props) => {
         setMensaje(error.response.data.message);
         alert(mensaje);
       } else {
-        setMensaje("Error al conectar con el servidor.");
+        setMensaje('Error al conectar con el servidor.');
       }
     }
   };
@@ -59,25 +57,20 @@ const Iniciosesion = (props) => {
       <div className="content">
         {/* Logos-Img */}
 
-        <div className="Flogo" id="FLogo-login-registro">
-        </div>
+        <div className="Flogo" id="FLogo-login-registro"></div>
         <div className="tlogo">
           <img src={TextLogo} alt="TextLogo" className="textlogo" />
         </div>
 
         {/* <!-- Contenido --> */}
 
-        <h2 className="Tittle" id="LoginTittle">
+        <h2 className="tittleLogin" id="LoginTittle">
           INICIAR SESIÓN
         </h2>
 
         {/* <!-- Formulario --> */}
 
-        <form
-          className="formRegistroLogin"
-          id="FormLogin"
-          onSubmit={handleSubmit}
-        >
+        <form className="formRegistroLogin" id="FormLogin" onSubmit={handleSubmit}>
           {/* Input Correo */}
           <input
             className="inputLogin"
@@ -98,7 +91,7 @@ const Iniciosesion = (props) => {
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
-                fill={showPswrd ? "#00ff00" : "black"}
+                fill={showPswrd ? '#00ff00' : 'black'}
                 className="bi bi-eye"
                 viewBox="0 0 16 16"
               >
@@ -109,7 +102,7 @@ const Iniciosesion = (props) => {
             <input
               className="pswrdInput"
               id="UserPasword"
-              type={showPswrd ? "text" : "password"}
+              type={showPswrd ? 'text' : 'password'}
               value={Contraseña}
               onChange={(e) => setContraseña(e.target.value)}
               placeholder="Contraseña"
@@ -118,24 +111,15 @@ const Iniciosesion = (props) => {
               required
             />
           </div>
+
           {/* Botones */}
           <div className="botonesBox">
-            <button
-              type="submit"
-              className="btnLoginRegistro"
-              id="RegisterUser-Btn"
-            >
-              Iniciar Sesión
+            <button type="submit" className="btnLoginRegistro" id="loginUser-Btn">
+              Iniciar sesión
             </button>
-
             <Link to="/">
-              <button
-                type="submit"
-                htmlFor="FormLogin"
-                className="btnLoginRegistro"
-                id="LoginUser-Btn"
-              >
-                Registrarme
+              <button type="submit" htmlFor="FormLogin" className="btnLoginRegistro" id="registerUser-Btn">
+                Crear una cuenta
               </button>
             </Link>
 

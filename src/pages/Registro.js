@@ -7,7 +7,7 @@ import Register from '../componentes/Registro.jsx';
 function Registro() {
 
     return (
-        <div className="Login">
+        <div className="Registro-Login">
             <Register />
         </div>
     );

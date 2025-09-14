@@ -8,7 +8,7 @@ import Finanzas from '../componentes/Finanzas.jsx';
 
 function finance() {
     return (
-        <div className="Finanzas">
+        <div className="finance page">
             <SideBar />
             <Finanzas />
         </div>

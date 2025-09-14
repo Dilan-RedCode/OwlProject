@@ -1,7 +1,7 @@
 /* Grid COnfig */
 .sidebar{
     display: grid;
-    grid-template-rows: 60px 30vh 60vh;
+    grid-template-rows: 70px 30vh 60vh;
     position: relative;
     width:45%;
     height: 100%;
@@ -17,53 +17,36 @@
 .mainNav{
     grid-row:3;
 }
+/* Boton sidebar */
+.toggleSidebar{
+    display: flex;
+    position: fixed;
+    top:0;
+    left:0;
+    grid-row: 1;
+    background-color: white;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    z-index: 3;
+    border-style: none;
+    border-bottom: #d9d9d9 solid 1px;
+    cursor: pointer;
+}
 /* Open Sidebar */
-button[data-descr] {
-    text-decoration: underline;
-    cursor: help;
-  }
-  
-  button[data-descr]:hover::after {
-    content: attr(data-descr);
-    position: relative;
-    min-width: 200px;
-    border: 1px #aaaaaa solid;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 12px;
-    color: #000000;
-    font-size: 14px;
-    z-index: 1;
-  }
+
 .sidebar.open{
     transform: translateX(0); /* Cuando el sidebar está abierto */
 }
 .closed {
     transform: translateX(-100%);/* cuando esta cerrado*/    
 }
-.toggleButton{
-    display: flex;
-    grid-row: 1;
-    background-color: white;
-    justify-content: flex-start;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    height: 60px;
-    z-index: 3;
-    border-style: none;
-    border: 1px solid black;
-    cursor: pointer;
-}
 .text-logo{
-    position: relative;
     max-height: 60px;
     height: -webkit-fill-available;
 
 }
 .Logo-Owl{
-    justify-items: left;
     width: -webkit-fill-available;
     max-width: 60px;
     height: 60px;
@@ -129,16 +112,13 @@ button[data-descr] {
     background-color: #2ECC72;
     border-style:solid .5px  ;
 }
-.toggleButton:hover{
-    background-color: black;
+.toggleSidebar:hover{
+    background-color: #d9d9d9;
 }
 /* MediaQueries */
 
 @media (min-width:768px) {
     .sidebar{
         width: 20%;
-    }
-    .toggleButton{
-        width: 25%;
     }
 }
